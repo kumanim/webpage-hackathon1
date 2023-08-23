@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <!-- Add Bootstrap CSS link -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-image: url('images/natwestback6.jpg'); /* Replace with the actual image path */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            background-color: rgba(236, 195, 231, 0.9);
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 400px;
+            margin: auto;
+            margin-top: 100px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+        .login-form {
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="text-center mb-4">
+        <img src="images/logo.webp" alt="Bank Logo" width="80">
+        <h1>Welcome to NatWest</h1>
+    </div>
+    <form name="loginForm" class="login-form" onsubmit="return validateLoginForm()">
+    <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" class="form-control" placeholder="Username" required>
+    </div>
+    <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+    </div>
+    <div class="form-group">
+        <input type="submit" class="btn btn-primary btn-block" value="Login">
+    </div>
+</form>
+    <p class="mt-3 text-center">Don't have an account? <a href="register.html">Register here</a></p>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    function validateLoginForm() {
+        var enteredUsername = document.getElementById("username").value;
+        var enteredPassword = document.getElementById("password").value;
+
+        // Replace these with your actual username and password
+        var correctUsername = "nkns08@gmail.com";
+        var correctPassword = "Nishant@18";
+
+        if (enteredUsername === correctUsername && enteredPassword === correctPassword) {
+            window.location.href = "Home.html"; // Redirect to home.html on successful login
+        } else {
+            alert("Incorrect username or password. Please try again.");
+        }
+        
+        return false;
+    }
+</script>
+</body>
+</html>
